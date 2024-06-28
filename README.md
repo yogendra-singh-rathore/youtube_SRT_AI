@@ -1,3 +1,8 @@
+<h1 align="center">
+  <br>
+  <a href="https://github.com/yogendra-singh-rathore/youtube_SRT_AI/"><img src="image/logo.png" width="200px" alt="YouTube SRT AI"></a>
+</h1>
+
 # YouTube SRT Generator, Translation and Compilation
 
 This project automates the generation and translation of SRT (SubRip Subtitle) files using Assembly AI, followed by translating these subtitles into multiple languages. Finally, it compiles the translated SRT files into MP3 and MP4 formats to ensure they match the timeline of the original video.
