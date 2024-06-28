@@ -82,7 +82,7 @@ This project automates the generation and translation of SRT (SubRip Subtitle) f
     python srt_mp3.py
     ```
 ### ==> We Have Web Application
-![Editor Image](image/editor.png)
+![Editor Image](image/Editor.png)
 
 ![SRT Generator Image](image/SRT_GEn.png)
 
