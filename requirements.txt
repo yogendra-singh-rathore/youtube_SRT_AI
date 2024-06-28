@@ -1,4 +1,3 @@
-
 assemblyai==0.28.1
 deep-translator==1.11.4
 moviepy==1.0.3
