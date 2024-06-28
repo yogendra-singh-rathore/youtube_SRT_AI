@@ -4,8 +4,8 @@ This project automates the generation and translation of SRT (SubRip Subtitle) f
 
 ## Features
 
-- Generate SRT files in Hindi using Assembly AI.
-- Translate Hindi SRT files into English.
+- Generate SRT files in Hindi(you can Change language) using Assembly AI.
+- Translate Hindi(you can Change language) SRT files into English.
 - Further translate English SRT files into multiple languages (German, Chinese, Japanese, etc.).
 - Compile SRT files into MP3.
 - Merge SRT with video to produce MP4 for timeline verification.
