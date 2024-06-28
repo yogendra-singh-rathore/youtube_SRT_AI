@@ -82,7 +82,11 @@ This project automates the generation and translation of SRT (SubRip Subtitle) f
     python srt_mp3.py
     ```
 ### ==> We Have Web Application
+![Editor Image](image/editor.png)
 
+![SRT Generator Image](image/SRT_GEn.png)
+
+![Home Image](image/home.png)
 1. **Our Flask-based Web App:**
    Add "Assembly AI API KEY" in 'main.py'
     ```bash
