@@ -8,6 +8,13 @@
 
 This project automates the generation and translation of SRT (SubRip Subtitle) files using Assembly AI, followed by translating these subtitles into multiple languages. Finally, it compiles the translated SRT files into MP3 and MP4 formats to ensure they match the timeline of the original video.
 
+## Updates Table
+| Update    | Status | Version |
+| -------- | ------- | ------- |
+| Single Files Code | Done   | v0 |
+| Web App v1.0 | Done | V1 |
+| Docker App | Working | V1 |
+
 ## Features
 
 - Generate SRT files in Hindi(you can Change language) using Assembly AI.
