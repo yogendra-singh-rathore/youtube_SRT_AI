@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="https://github.com/yogendra-singh-rathore/youtube_SRT_AI/"><img src="image/logo.png" width="200px" alt="YouTube SRT AI"></a>
+  <a href="https://github.com/yogendra-singh-rathore/youtube_SRT_AI/"><img src="image/logo.jpg" width="200px" alt="YouTube SRT AI"></a>
 </h1>
 
 # YouTube SRT Generator, Translation and Compilation
