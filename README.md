@@ -41,7 +41,7 @@ This project automates the generation and translation of SRT (SubRip Subtitle) f
 
 ### Generating and Translating SRT Files
 
-1. **Generate SRT in Hindi:**
+1. **CLI Generate SRT in Hindi:**
 
     Run the `srtAi.py` script to generate SRT files in Hindi using Assembly AI.
 
@@ -51,7 +51,7 @@ This project automates the generation and translation of SRT (SubRip Subtitle) f
 
     Assembly AI supports various languages. For a complete list of supported languages and their corresponding language codes, refer to the [Assembly AI Supported Languages](https://www.assemblyai.com/docs/concepts/supported-languages) documentation.
 
-2. **Translate SRT Files:**
+2. **CLI Translate SRT Files:**
 
     Use the `translate.py` script to translate the Hindi SRT files into English and then into other languages (German, Chinese, Japanese, etc.).
 
@@ -61,7 +61,7 @@ This project automates the generation and translation of SRT (SubRip Subtitle) f
 
 ### Compiling SRT to MP3 and MP4
 
-1. **Compile SRT to MP3:**
+1. **CLI Compile SRT to MP3:**
 
     Run the `srt_mp3.py` script to compile the translated SRT files into MP3.
 
@@ -69,14 +69,21 @@ This project automates the generation and translation of SRT (SubRip Subtitle) f
     python srt_mp3.py
     ```
 
-2. **Generate MP4 with SRT:**
+2. **CLI Generate MP4 with SRT:**
 
     The `srt_mp3.py` script also generates an MP4 file to check if the SRT matches the timeline of the original video.
 
     ```bash
     python srt_mp3.py
     ```
+### We Have Web Application
 
+1. **Our Flask-based Web App:**
+   Add "Assembly AI API KEY" in 'main.py'
+    ```bash
+    python main.py
+    ```
+    
 ## File Structure
 
 - `srtAi.py`: Script to generate SRT files in Hindi using Assembly AI.
