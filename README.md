@@ -76,7 +76,7 @@ This project automates the generation and translation of SRT (SubRip Subtitle) f
     ```bash
     python srt_mp3.py
     ```
-### We Have Web Application
+### ==> We Have Web Application
 
 1. **Our Flask-based Web App:**
    Add "Assembly AI API KEY" in 'main.py'
