@@ -29,8 +29,13 @@ This project automates the generation and translation of SRT (SubRip Subtitle) f
 - Assembly AI API key
 - Required Python packages (can be installed via `requirements.txt`)
 
-## Installation
+## Installation Python File
+#### File Structure
 
+- `srtAi.py`: Script to generate SRT files in Hindi using Assembly AI.
+- `translate.py`: Script to translate Hindi SRT files into English and other languages.
+- `srt_mp3.py`: Script to compile translated SRT files into MP3 and generate MP4 for timeline verification.
+  
 1. Clone the repository:
 
     ```bash
@@ -44,10 +49,10 @@ This project automates the generation and translation of SRT (SubRip Subtitle) f
     pip install -r requirements.txt
     ```
 
-3. Set up your Assembly AI API key:
+3. Set up your Assembly AI API key in the main.py:
 
     ```bash
-    export ASSEMBLYAI_API_KEY='your_api_key_here'
+    aai.settings.api_key = "API KEY"
     ```
 
 ## Usage
@@ -89,23 +94,22 @@ This project automates the generation and translation of SRT (SubRip Subtitle) f
     ```bash
     python srt_mp3.py
     ```
-### ==> We Have Web Application
+
+  
+## Install Flask Web Application (GUI)
 ![Editor Image](image/Editor.png)
 
 ![SRT Generator Image](image/SRT_GEn.png)
 
 ![Home Image](image/home.png)
-1. **Our Flask-based Web App:**
-   Add "Assembly AI API KEY" in 'main.py'
+1. **Run App: Easy To Use**
     ```bash
     python main.py
     ```
-    
-## File Structure
-
-- `srtAi.py`: Script to generate SRT files in Hindi using Assembly AI.
-- `translate.py`: Script to translate Hindi SRT files into English and other languages.
-- `srt_mp3.py`: Script to compile translated SRT files into MP3 and generate MP4 for timeline verification.
+## Install Docker Image
+    ```bash
+    Coming Soon
+    ```
 
 ## Dependencies
 
