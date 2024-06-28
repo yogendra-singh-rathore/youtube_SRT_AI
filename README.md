@@ -49,6 +49,8 @@ This project automates the generation and translation of SRT (SubRip Subtitle) f
     python srtAi.py
     ```
 
+    Assembly AI supports various languages. For a complete list of supported languages and their corresponding language codes, refer to the [Assembly AI Supported Languages](https://www.assemblyai.com/docs/concepts/supported-languages) documentation.
+
 2. **Translate SRT Files:**
 
     Use the `translate.py` script to translate the Hindi SRT files into English and then into other languages (German, Chinese, Japanese, etc.).
@@ -97,4 +99,4 @@ This project is licensed under the MIT License.
 ## Acknowledgments
 
 - Thanks to Assembly AI for providing the transcription service.
-- Any other acknowledgments here.
+- Me (Yogendra Singh Rathore)
