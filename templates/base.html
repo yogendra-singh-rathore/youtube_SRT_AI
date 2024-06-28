@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube SRT Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>YouTube SRT Generator</h1>
+            <p>Developed by Yogendra Singh Rathore</p>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('srt_gen') }}">SRT GEN</a></li>
+                <li><a href="{{ url_for('srt_to_mp4') }}">SRT to MP4</a></li>
+                <li><a href="{{ url_for('srt_edit') }}">SRT Editor</a></li>
+                <li><a href="{{ url_for('srt_translate') }}">SRT Language Translator</a></li>
+                
+            </ul>
+        </nav>
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+        <footer>
+            <p>Find me on <a href="https://github.com/yogendra-singh-rathore/">GitHub</a> | 
+            Subscribe on <a href="https://www.youtube.com/channel/UCBQ-ZsCQld3xiOwsN04hSfg">YouTube</a> | 
+            Visit <a href="https://yogendrasinghrathore.in/">My Website</a></p>
+        </footer>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

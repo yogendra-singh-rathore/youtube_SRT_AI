@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>SRT Language Translator</h2>
+<form action="{{ url_for('srt_translate') }}" method="post" enctype="multipart/form-data">
+    <label for="file">Upload SRT File:</label>
+    <input type="file" name="file">
+    <br><br>
+    <label for="intermediate_language">Translate to Intermediate Language:</label>
+    <select name="intermediate_language" id="intermediate_language">
+        <option value="en">English</option>
+        <!-- Add other languages as needed -->
+    </select>
+    <br><br>
+    <label for="target_languages">Translate to Target Languages:</label><br>
+    <input type="checkbox" name="target_languages" value="de"> German<br>
+    <input type="checkbox" name="target_languages" value="zh-CN"> Chinese<br>
+    <input type="checkbox" name="target_languages" value="fr"> French<br>
+    <input type="checkbox" name="target_languages" value="ja"> Japanese<br>
+    <!-- Add more target languages as needed -->
+    <br><br>
+    <button type="submit">Translate</button>
+</form>
+
+{% for message in get_flashed_messages() %}
+    <p>{{ message }}</p>
+{% endfor %}
+{% endblock %}

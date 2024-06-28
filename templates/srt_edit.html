@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>SRT/VTT Edit</h2>
+<form id="uploadForm" action="{{ url_for('srt_edit') }}" method="post" enctype="multipart/form-data">
+    <label for="file">Upload SRT/VTT File:</label>
+    <input type="file" name="file">
+    <label for="video">Upload Video File (optional):</label>
+    <input type="file" name="video">
+    <button type="submit" onclick="uploadFile()">Upload</button>
+    <progress id="progressBar" value="0" max="100" style="width:300px;"></progress>
+</form>
+
+<div id="editorContainer" style="display: none; margin-top: 20px;">
+    <div class="split-container">
+        <div class="video-container">
+            <video id="videoPlayer" width="640" height="360" controls>
+                <source id="videoSource" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="editor-container">
+            <form id="editForm" action="{{ url_for('srt_edit') }}" method="post">
+                <input type="hidden" name="file_path" id="filePath">
+                <textarea name="file_content" id="fileContent" rows="20" cols="50"></textarea>
+                <label for="custom_name">Save As:</label>
+                <input type="text" name="custom_name" placeholder="Enter custom file name">
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    function uploadFile() {
+        var form = document.getElementById('uploadForm');
+        var progressBar = document.getElementById('progressBar');
+        
+        form.onsubmit = function(event) {
+            event.preventDefault();  // Prevent form submission
+            
+            var formData = new FormData(form);
+            var xhr = new XMLHttpRequest();
+            
+            xhr.upload.onprogress = function(event) {
+                if (event.lengthComputable) {
+                    var percentComplete = (event.loaded / event.total) * 100;
+                    progressBar.value = percentComplete;
+                }
+            };
+            
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    var response = JSON.parse(xhr.responseText);
+                    
+                    if (response.file_content) {
+                        document.getElementById('filePath').value = response.file_path;
+                        document.getElementById('fileContent').value = response.file_content;
+                        document.getElementById('editorContainer').style.display = 'block';
+                    }
+                    
+                    if (response.video_path) {
+                        var videoPlayer = document.getElementById('videoPlayer');
+                        var videoSource = document.getElementById('videoSource');
+                        videoSource.src = response.video_path;
+                        videoPlayer.load();
+                    }
+                } else {
+                    alert('Error uploading file. Please try again.');
+                }
+            };
+            
+            xhr.open('POST', form.action, true);
+            xhr.send(formData);
+        };
+    }
+</script>
+
+{% for message in get_flashed_messages() %}
+    <p>{{ message }}</p>
+{% endfor %}
+
+<style>
+.split-container {
+    display: flex;
+}
+.video-container, .editor-container {
+    flex: 1;
+    margin: 10px;
+}
+</style>
+
+{% endblock %}

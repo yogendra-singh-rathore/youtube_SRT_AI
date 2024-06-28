@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>SRT to MP4 Converter</h2>
+<form action="{{ url_for('srt_to_mp4') }}" method="post" enctype="multipart/form-data">
+    <label for="mp3_file">Upload MP3 File:</label>
+    <input type="file" name="mp3_file">
+    <br><br>
+    <label for="srt_file">Upload SRT File:</label>
+    <input type="file" name="srt_file">
+    <br><br>
+    <p>example.mp4</p>
+    <label for="output_file_name">Output File Name:</label>
+    <input type="text" name="output_file_name" placeholder="Enter output file name">
+    <br><br>
+    <button type="submit">Convert</button>
+</form>
+
+{% for message in get_flashed_messages() %}
+    <p>{{ message }}</p>
+{% endfor %}
+{% endblock %}
