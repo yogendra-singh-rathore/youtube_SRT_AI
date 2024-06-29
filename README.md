@@ -11,9 +11,9 @@ This project automates the generation and translation of SRT (SubRip Subtitle) f
 ## Updates Table
 | Update    | Status | Version |
 | -------- | ------- | ------- |
-| Single Files Code | Done   | v0 |
-| Web App v1.0 | Done | V1 |
-| Docker App | Working | V1 |
+| Single Files Code | Done   | v2 |
+| Web App v1.0 | Done | V2 |
+| Docker App | Done | V2 |
 
 ## Features
 
@@ -108,7 +108,7 @@ This project automates the generation and translation of SRT (SubRip Subtitle) f
     ```
 ## Install Docker Image
     ```bash
-    Coming Soon
+    docker pull rathoreys1996/flsk-srt-genai
     ```
 
 ## Dependencies
