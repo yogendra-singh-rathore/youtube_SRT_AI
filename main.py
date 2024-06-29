@@ -7,7 +7,6 @@ from flask import Flask, render_template, request, redirect, url_for, flash, sen
 import moviepy.editor as mp
 import pysrt
 from werkzeug.utils import secure_filename
-from langdetect import detect
 from deep_translator import GoogleTranslator
 import assemblyai as aai
 
@@ -210,6 +209,20 @@ def srt_edit():
     if request.method == 'POST':
         response_data = {}
 
+        if 'file_content' in request.form:
+            file_content = request.form['file_content']
+            file_path = request.form['file_path']
+            custom_name = request.form['custom_name']
+            if custom_name:
+                base_filename, ext = os.path.splitext(file_path)
+                new_file_path = os.path.join(os.getcwd(), 'output/srt_edit', secure_filename(custom_name + ext))
+            else:
+                new_file_path = os.path.join(os.getcwd(), 'output/srt_edit', secure_filename(os.path.basename(file_path)))
+            with open(new_file_path, 'w', encoding='utf-8') as f:
+                f.write(file_content)
+            flash('File saved successfully!')
+            return redirect(url_for('srt_edit'))
+
         if 'file' in request.form:
             srt_file_name = request.form['file']
             srt_file_path = os.path.join(os.getcwd(), 'output/srt_gen', srt_file_name)
@@ -225,9 +238,6 @@ def srt_edit():
 
         response_data['srt_files'] = srt_files
         response_data['video_files'] = video_files
-
-        print("SRT Files:", srt_files)  # Debug statement
-        print("Video Files:", video_files)  # Debug statement
 
         return jsonify(response_data)
 
@@ -333,4 +343,4 @@ def download_output_file(filepath):
     return send_from_directory(directory, filename)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0",port=int("3000"),debug=True)
