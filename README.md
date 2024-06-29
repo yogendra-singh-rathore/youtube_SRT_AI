@@ -113,6 +113,8 @@ This project automates the generation and translation of SRT (SubRip Subtitle) f
 
     docker pull rathoreys1996/flsk-srt-genai
 
+    docker container run -d -p 3000:3000 rathoreys1996/flsk-srt-genai:0.1.RELEASE
+
 ## Dependencies
 
 The following versions are required:
