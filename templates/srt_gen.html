@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 <h2>SRT GEN</h2>
-<p>To Add More Language Visit <a href="https://www.assemblyai.com/docs/concepts/supported-languages">Assambly Ai Language</a></p>
+<p>To Add More Language Visit <a href="https://www.assemblyai.com/docs/concepts/supported-languages">AssemblyAI Language</a></p>
 <form action="{{ url_for('srt_gen') }}" method="post" enctype="multipart/form-data">
     <label for="file">Upload MP3 File:</label>
-    <input type="file" name="file" required>
+    <input type="file" name="file" required><br><br>
     <label for="language">Select Language:</label>
     <select name="language" required>
         <option value="en">Global English</option>
@@ -12,7 +12,9 @@
         <option value="en_au">Australian English</option>
         <option value="en_uk">British English</option>
         <!-- Add more options as needed -->
-    </select>
+    </select><br><br>
+    <label for="api_key">Enter Your AssemblyAI API Key:</label>
+    <input type="text" name="api_key" required><br><br>
     <button type="submit">Generate SRT</button>
 </form>
 {% for message in get_flashed_messages() %}

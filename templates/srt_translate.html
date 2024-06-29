@@ -1,9 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 <h2>SRT Language Translator</h2>
-<form action="{{ url_for('srt_translate') }}" method="post" enctype="multipart/form-data">
-    <label for="file">Upload SRT File:</label>
-    <input type="file" name="file">
+<form action="{{ url_for('srt_translate') }}" method="post">
+    <label for="file">Select SRT File:</label>
+    <select name="file" id="file">
+        {% for srt_file in srt_files %}
+        <option value="{{ srt_file }}">{{ srt_file }}</option>
+        {% endfor %}
+    </select>
     <br><br>
     <label for="intermediate_language">Translate to Intermediate Language:</label>
     <select name="intermediate_language" id="intermediate_language">

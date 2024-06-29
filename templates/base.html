@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YouTube SRT Generator</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
 </head>
 <body>
     <div class="container">
@@ -19,7 +20,8 @@
                 <li><a href="{{ url_for('srt_to_mp4') }}">SRT to MP4</a></li>
                 <li><a href="{{ url_for('srt_edit') }}">SRT Editor</a></li>
                 <li><a href="{{ url_for('srt_translate') }}">SRT Language Translator</a></li>
-                
+                <li><a href="{{ url_for('font') }}">Font Download</a></li>
+                <li><a href="{{ url_for('download') }}">Download Files</a></li>
             </ul>
         </nav>
         <main>
