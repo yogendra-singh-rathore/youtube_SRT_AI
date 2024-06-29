@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Upload Font for SRT File</h2>
+<form action="{{ url_for('upload_font') }}" method="post" enctype="multipart/form-data">
+    <label for="font_file">Upload Font File (.ttf):</label>
+    <input type="file" id="font_file" name="font_file" accept=".ttf" required>
+    <button type="submit">Upload Font</button>
+</form>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <ul class="flashes">
+    {% for category, message in messages %}
+      <li class="{{ category }}">{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+{% endblock %}

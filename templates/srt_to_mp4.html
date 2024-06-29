@@ -2,13 +2,28 @@
 {% block content %}
 <h2>SRT to MP4 Converter</h2>
 <form action="{{ url_for('srt_to_mp4') }}" method="post" enctype="multipart/form-data">
-    <label for="mp3_file">Upload MP3 File:</label>
-    <input type="file" name="mp3_file">
+    <label for="mp3_file">Select MP3 File:</label>
+    <select name="mp3_file">
+        {% for mp3_file in mp3_files %}
+            <option value="{{ mp3_file }}">{{ mp3_file }}</option>
+        {% endfor %}
+    </select>
     <br><br>
-    <label for="srt_file">Upload SRT File:</label>
-    <input type="file" name="srt_file">
+    <label for="srt_file">Select SRT File:</label>
+    <select name="srt_file">
+        {% for srt_file in srt_files %}
+            <option value="{{ srt_file }}">{{ srt_file }}</option>
+        {% endfor %}
+    </select>
     <br><br>
-    <p>example.mp4</p>
+    <label for="font_path">Select Font (optional):</label>
+    <select name="font_path">
+        <option value="">Default</option>
+        {% for font in fonts %}
+            <option value="output/fonts/{{ font }}">{{ font }}</option>
+        {% endfor %}
+    </select>
+    <br><br>
     <label for="output_file_name">Output File Name:</label>
     <input type="text" name="output_file_name" placeholder="Enter output file name">
     <br><br>
