@@ -1,5 +1,6 @@
+flask==3.0.3
 assemblyai==0.28.1
 deep-translator==1.11.4
 moviepy==1.0.3
 pysrt==1.1.2
-Flask==3.0.3
+langdetect==1.0.9
