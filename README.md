@@ -13,7 +13,7 @@ This project automates the generation and translation of SRT (SubRip Subtitle) f
 | -------- | ------- | ------- |
 | Single Files Code | Done   | v2 |
 | Web App v1.0 | Done | V2 |
-| Docker App | Done | flsk-srt-genai:0.1.RELEASE |
+| Docker App | Done | flsk-srt-genai:2.0.RELEASE |
 
 ## Features
 
