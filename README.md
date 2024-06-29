@@ -22,6 +22,7 @@ This project automates the generation and translation of SRT (SubRip Subtitle) f
 - Add: Custom Fond Upload Available
 - Add: Download Files in Docker and Server
 - Add: Docker File Available
+- Bug Fix: Docker Save File issue
 - Add: Dropdown Select Option
 - Add: Front-End API KEY Support
 - Add: Create Video with Custom Font / Style
@@ -111,7 +112,7 @@ This project automates the generation and translation of SRT (SubRip Subtitle) f
     ```
 ## Install Docker Image
 
-    docker pull rathoreys1996/flsk-srt-genai
+    docker pull rathoreys1996/flsk-srt-genai:2.0.RELEASE
 
     docker container run -d -p 3000:3000 rathoreys1996/flsk-srt-genai:0.1.RELEASE
 
