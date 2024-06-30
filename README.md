@@ -110,9 +110,8 @@ This project automates the generation and translation of SRT (SubRip Subtitle) f
     python main.py
     ```
 ## Install Docker Image
-    ```bash
     docker pull m3evil/flsk-srt-genai:2.0.1
-    ```
+
 
 ## Dependencies
 
