@@ -23,7 +23,7 @@ This project automates the generation and translation of SRT (SubRip Subtitle) f
 - Add: Download Files in Docker and Server
 - Add: Docker File Available
 - Add: Dropdown Select Option
-- Add: Front-End API KEY Support
+- Add: Direct Support API KEY From Front-End
 - Add: Create Video with Custom Font / Style
 
 ## Prerequisites
