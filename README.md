@@ -42,8 +42,8 @@ This project automates the generation and translation of SRT (SubRip Subtitle) f
 1. Clone the repository:
 
     ```bash
-    git clone <repository-url>
-    cd <repository-directory>
+    git clone git@github.com:yogendra-singh-rathore/youtube_SRT_AI.git
+    cd youtube_SRT_AI
     ```
 
 2. Install the required packages:
