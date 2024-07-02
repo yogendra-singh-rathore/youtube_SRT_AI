@@ -11,9 +11,8 @@ This project automates the generation and translation of SRT (SubRip Subtitle) f
 ## Updates Table
 | Update    | Status | Version |
 | -------- | ------- | ------- |
-| Single Files Code | Done   | v2 |
-| Web App v1.0 | Done | V2 |
-| Docker App | Done | flsk-srt-genai:2.0.2 |
+| Web App v1.0 | Done | V2.1 |
+| Docker App | Done | flsk-srt-genai:2.1.0 |
 
 ## Features
 
@@ -25,6 +24,7 @@ This project automates the generation and translation of SRT (SubRip Subtitle) f
 - Add: Dropdown Select Option
 - Add: Direct Support API KEY From Front-End
 - Add: Create Video with Custom Font / Style
+- Add: Gen AI Music
 
 ## Prerequisites
 
