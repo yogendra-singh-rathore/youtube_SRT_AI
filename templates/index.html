@@ -5,20 +5,20 @@
 <br><br>
 <h4>How to Use this Tool</h4>
 <p>Generate subtitles from your MP3 files effortlessly.</p>
-<p><a href="/srt_gen.html">Generate Subtitles</a></p>
+<p><a href="{{ url_for('srt_gen') }}">Generate Subtitles</a></p>
 <br>
 <p>Merge your SRT subtitles with MP3 files to create an MP4 test video.</p>
-<p><a href="/srt_to_mp4.html">Merge Subtitles with Video</a></p>
+<p><a href="{{ url_for('srt_to_mp4') }}">Merge Subtitles with Video</a></p>
 <br>
 <p>Edit your SRT files to ensure accuracy and fit your needs.</p>
-<p><a href="/srt_edit.html">Edit Subtitles</a></p>
+<p><a href="{{ url_for('srt_edit') }}">Edit Subtitles</a></p>
 <br>
 <p>Translate your finalized SRT files into various languages such as German, Chinese, and more.</p>
-<p><a href="/srt_translate.html">Translate Subtitles</a></p>
+<p><a href="{{ url_for('srt_translate') }}">Translate Subtitles</a></p>
 <br><br>
 <p>Some languages require specific font support. Download the necessary fonts for your subtitle files.</p>
-<p><a href="/font.html">Download Fonts</a></p>
+<p><a href="{{ url_for('font') }}">Download Fonts</a></p>
 <br>
 <p>Access and download your generated and edited files from the output directory.</p>
-<p><a href="/download.html">Download Files</a></p>
+<p><a href="{{ url_for('download') }}">Download Files</a></p>
 {% endblock %}
