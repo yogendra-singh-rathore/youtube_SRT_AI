@@ -11,20 +11,17 @@ This project automates the generation and translation of SRT (SubRip Subtitle) f
 ## Updates Table
 | Update    | Status | Version |
 | -------- | ------- | ------- |
-| Web App v1.0 | Done | V2.1 |
-| Docker App | Done | flsk-srt-genai:2.1.0 |
+| Web App v1.0 | Done | V3.0 |
+| Docker App | Done | m3evil/flsk-srt-genai:3.0 |
 
 ## Features
 
-- Multiple Language Support
-- Bug Fix: Multiple Language Translator Support
-- Add: Custom Fond Upload Available
-- Add: Download Files in Docker and Server
-- Add: Docker File Available
-- Add: Dropdown Select Option
-- Add: Direct Support API KEY From Front-End
-- Add: Create Video with Custom Font / Style
-- Add: Gen AI Music
+- Generate Mp3 To Subtitle 
+- Edit Subtitals with Demo Video (Create Demo MP4 with Generated Subtitles )
+- Translate Subtitles in Multiple Languages
+- Download Fonts as per Languages
+- Download Files
+- Manage All of Your YouTube Videos and Keep up-to-date YouTube videos Data (in YouTube Manager)
 
 ## Prerequisites
 
@@ -114,18 +111,18 @@ Pull Docker Image
   ```bash
     docker pull m3evil/flsk-srt-genai:3.0
   ```
-Create New Folder In Local Machine
+Create a New Folder In the Local Machine
   ```bash
     mkdir youtubeManager
   ```
-Copy Files From Docker to Local Machine
+Copy Files From Docker to the Local Machine
   ```bash
     docker container run -d --name temp-container m3evil/flsk-srt-genai:3.0
     docker cp temp-container:app/output/. "./output"
     docker container stop temp-container
     docker container rm temp-container 
   ```
-Run Web App And Store Data in Local Machine
+Run Web App And Store Data in the Local Machine
   ```bash
     docker container run -d -p 3000:3000 -v ".\output:/output" m3evil/flsk-srt-genai:3.0
   ```
