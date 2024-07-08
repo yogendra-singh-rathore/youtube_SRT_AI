@@ -11,7 +11,7 @@ This project automates the generation and translation of SRT (SubRip Subtitle) f
 ## Updates Table
 | Update    | Status | Version |
 | -------- | ------- | ------- |
-| Web App v1.0 | Done | V3.0 |
+| Web App v3.0 | Done | V3.0 |
 | Docker App | Done | m3evil/flsk-srt-genai:3.0 |
 
 ## Features
