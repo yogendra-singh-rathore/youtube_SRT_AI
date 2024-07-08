@@ -97,11 +97,18 @@ This project automates the generation and translation of SRT (SubRip Subtitle) f
 
   
 ## Install Flask Web Application (GUI)
-![Editor Image](image/Editor.png)
-
-![SRT Generator Image](image/SRT_GEn.png)
-
 ![Home Image](image/home.png)
+
+![SRT Generator Image](image/srt_gen.png)
+
+![Editor Image](image/editor.png)
+
+![Manager Image](image/manager.png)
+
+![Translate Image](image/translate.png)
+
+![Download Image](image/download.png)
+
 1. **Run App: Easy To Use**
     ```bash
     python main.py
