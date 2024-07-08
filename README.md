@@ -110,10 +110,25 @@ This project automates the generation and translation of SRT (SubRip Subtitle) f
     python main.py
     ```
 ## Install Docker Image
-    docker pull m3evil/flsk-srt-genai:2.1.0
-
-    docker container run -d -p 3000:3000 m3evil/flsk-srt-genai:2.1.0
-
+Pull Docker Image
+  ```bash
+    docker pull m3evil/flsk-srt-genai:3.0
+  ```
+Create New Folder In Local Machine
+  ```bash
+    mkdir youtubeManager
+  ```
+Copy Files From Docker to Local Machine
+  ```bash
+    docker container run -d --name temp-container m3evil/flsk-srt-genai:3.0
+    docker cp temp-container:app/output/. "./output"
+    docker container stop temp-container
+    docker container rm temp-container 
+  ```
+Run Web App And Store Data in Local Machine
+  ```bash
+    docker container run -d -p 3000:3000 -v ".\output:/output" m3evil/flsk-srt-genai:3.0
+  ```
 
 ## Dependencies
 
