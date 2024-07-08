@@ -9,6 +9,7 @@ import pysrt
 from werkzeug.utils import secure_filename
 from deep_translator import GoogleTranslator
 import assemblyai as aai
+import sqlite3
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)  # Generate a random secret key
@@ -25,6 +26,17 @@ os.makedirs(os.path.join(os.getcwd(), 'output/srt_edit'), exist_ok=True)
 os.makedirs(os.path.join(os.getcwd(), 'output/srt_to_mp4'), exist_ok=True)
 os.makedirs(os.path.join(os.getcwd(), 'uploads'), exist_ok=True)
 os.makedirs(os.path.join(os.getcwd(), 'output/fonts'), exist_ok=True)
+os.makedirs(os.path.join(os.getcwd(), 'output/database'), exist_ok=True)
+    
+def get_db_connection():
+  """Connects to the YouTube database in the mounted volume."""
+  # Get the path to the database file within the container
+  database_path = os.path.join('./output/database', 'youtube.db')
+
+  # Establish the connection using the full path
+  conn = sqlite3.connect(database_path)
+  conn.row_factory = sqlite3.Row
+  return conn
 
 def install_font(font_path):
     system = platform.system()
@@ -146,18 +158,6 @@ def translate_srt(file_path, intermediate_language, target_languages):
 
         print(f"Subtitles translated to {target_language} saved to {output_file_path}")
 
-# def get_font_url(language_code):
-#     font_urls = {
-#         'hi': 'https://example.com/fonts/hindi.ttf',  # Replace with actual font URLs
-#         'zh': 'https://example.com/fonts/chinese.ttf',
-#         'ja': 'https://example.com/fonts/japanese.ttf',
-#     }
-#     return font_urls.get(language_code)
-
-# def download_font(font_url, font_path):
-#     response = requests.get(font_url)
-#     with open(font_path, 'wb') as file:
-#         file.write(response.content)
 
 @app.route('/')
 def index():
@@ -289,11 +289,10 @@ def srt_to_mp4():
     return render_template('srt_to_mp4.html', mp3_files=mp3_files, srt_files=srt_files, fonts=os.listdir('output/fonts'))
 
 
-
-
 @app.route('/output/<folder>/<filename>')
 def download_file(folder, filename):
     return send_from_directory(os.path.join(os.getcwd(), f'output/{folder}'), filename)
+
 
 @app.route('/font', methods=['GET'])
 def font():
@@ -341,6 +340,157 @@ def download_output_file(filepath):
     directory = os.path.dirname(filepath)
     filename = os.path.basename(filepath)
     return send_from_directory(directory, filename)
+
+@app.route('/youtube', methods=['GET', 'POST'])
+def youtube():
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    if request.method == 'POST':
+        video_id = request.form.get('video_id')
+        video_title = request.form.get('video_title')
+        video_url = request.form.get('video_url')
+        video_description = request.form.get('video_description')
+        video_status = request.form.get('video_status')
+        subtitle_languages = request.form.getlist('subtitle_languages')
+        new_language = request.form.get('new_language')
+        playlist_name = request.form.get('playlist_name')
+        new_playlist = request.form.get('new_playlist')
+        playlist_status = request.form.get('playlist_status')
+        end_video_1 = request.form.get('end_video_1')
+        end_video_2 = request.form.get('end_video_2')
+
+        if new_language:
+            cursor.execute('INSERT INTO subtitle_language_table (language) VALUES (?)', (new_language,))
+            subtitle_languages.append(new_language)
+
+        if new_playlist:
+            cursor.execute('INSERT INTO playlist_table (playlist_name) VALUES (?)', (new_playlist,))
+            playlist_name = new_playlist
+
+        if video_id:  # Editing existing video
+            cursor.execute('UPDATE video_table SET video_title = ?, video_url = ?, video_description = ? WHERE id = ?',
+                           (video_title, video_url, video_description, video_id))
+
+            cursor.execute('DELETE FROM video_status WHERE video_id = ?', (video_id,))
+            cursor.execute('SELECT id FROM status_table WHERE status = ?', (video_status,))
+            status_id = cursor.fetchone()['id']
+            cursor.execute('INSERT INTO video_status (video_id, status_id) VALUES (?, ?)', (video_id, status_id))
+
+            cursor.execute('DELETE FROM videoLanguage_table WHERE video_id = ?', (video_id,))
+            for language in subtitle_languages:
+                cursor.execute('SELECT id FROM subtitle_language_table WHERE language = ?', (language,))
+                subtitle_id = cursor.fetchone()['id']
+                cursor.execute('INSERT INTO videoLanguage_table (video_id, subtitle_id) VALUES (?, ?)', (video_id, subtitle_id))
+
+            cursor.execute('DELETE FROM video_playlist_table WHERE video_id = ?', (video_id,))
+            if playlist_name:
+                cursor.execute('SELECT id FROM playlist_table WHERE playlist_name = ?', (playlist_name,))
+                playlist_id = cursor.fetchone()['id']
+                cursor.execute('INSERT INTO video_playlist_table (video_id, playlist_id) VALUES (?, ?)', (video_id, playlist_id))
+
+            cursor.execute('UPDATE end_video_table SET end_video_1_id = ?, end_video_2_id = ? WHERE video_id = ?',
+                           (end_video_1 if end_video_1 != 'None' else None, end_video_2 if end_video_2 != 'None' else None, video_id))
+
+            cursor.execute('DELETE FROM playlist_status WHERE playlist_id = (SELECT id FROM playlist_table WHERE playlist_name = ?)', (playlist_name,))
+            cursor.execute('INSERT INTO playlist_status (playlist_id, status_id) VALUES ((SELECT id FROM playlist_table WHERE playlist_name = ?), (SELECT id FROM status_table WHERE status = ?))', (playlist_name, playlist_status))
+        else:  # Adding new video
+            cursor.execute('INSERT INTO video_table (video_title, video_url, video_description) VALUES (?, ?, ?)',
+                           (video_title, video_url, video_description))
+            video_id = cursor.lastrowid
+
+            cursor.execute('SELECT id FROM status_table WHERE status = ?', (video_status,))
+            status_id = cursor.fetchone()['id']
+            cursor.execute('INSERT INTO video_status (video_id, status_id) VALUES (?, ?)', (video_id, status_id))
+
+            for language in subtitle_languages:
+                cursor.execute('SELECT id FROM subtitle_language_table WHERE language = ?', (language,))
+                subtitle_id = cursor.fetchone()['id']
+                cursor.execute('INSERT INTO videoLanguage_table (video_id, subtitle_id) VALUES (?, ?)', (video_id, subtitle_id))
+
+            if playlist_name:
+                cursor.execute('SELECT id FROM playlist_table WHERE playlist_name = ?', (playlist_name,))
+                playlist_id = cursor.fetchone()['id']
+                cursor.execute('INSERT INTO video_playlist_table (video_id, playlist_id) VALUES (?, ?)', (video_id, playlist_id))
+
+            cursor.execute('INSERT INTO end_video_table (video_id, end_video_1_id, end_video_2_id) VALUES (?, ?, ?)',
+                           (video_id, end_video_1 if end_video_1 != 'None' else None, end_video_2 if end_video_2 != 'None' else None))
+
+            cursor.execute('INSERT INTO playlist_status (playlist_id, status_id) VALUES ((SELECT id FROM playlist_table WHERE playlist_name = ?), (SELECT id FROM status_table WHERE status = ?))', (playlist_name, playlist_status))
+
+        conn.commit()
+        conn.close()
+        return redirect(url_for('youtube'))
+
+    videos = cursor.execute('''
+        SELECT vt.id, vt.video_title, vt.video_url, vt.video_description,
+               st.status as video_status,
+               GROUP_CONCAT(slt.language, ', ') as subtitle_languages,
+               ev1.video_title as end_video_1,
+               ev2.video_title as end_video_2,
+               pt.playlist_name,
+               pst.status as playlist_status
+        FROM video_table vt
+        LEFT JOIN video_status vs ON vt.id = vs.video_id
+        LEFT JOIN status_table st ON vs.status_id = st.id
+        LEFT JOIN videoLanguage_table vl ON vt.id = vl.video_id
+        LEFT JOIN subtitle_language_table slt ON vl.subtitle_id = slt.id
+        LEFT JOIN end_video_table evt ON vt.id = evt.video_id
+        LEFT JOIN video_table ev1 ON evt.end_video_1_id = ev1.id
+        LEFT JOIN video_table ev2 ON evt.end_video_2_id = ev2.id
+        LEFT JOIN video_playlist_table vp ON vt.id = vp.video_id
+        LEFT JOIN playlist_table pt ON vp.playlist_id = pt.id
+        LEFT JOIN playlist_status ps ON pt.id = ps.playlist_id
+        LEFT JOIN status_table pst ON ps.status_id = pst.id
+        GROUP BY vt.id
+    ''').fetchall()
+
+    subtitle_languages = cursor.execute('SELECT language FROM subtitle_language_table').fetchall()
+    playlists = cursor.execute('SELECT playlist_name FROM playlist_table').fetchall()
+    statuses = cursor.execute('SELECT status FROM status_table').fetchall()
+    conn.close()
+
+    return render_template('youtube.html', videos=videos, subtitle_languages=[lang['language'] for lang in subtitle_languages],
+                           playlists=[playlist['playlist_name'] for playlist in playlists], statuses=[status['status'] for status in statuses])
+
+@app.route('/edit_video/<int:video_id>', methods=['GET'])
+def edit_video(video_id):
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    video = cursor.execute('''
+        SELECT vt.id, vt.video_title, vt.video_url, vt.video_description,
+               st.status as video_status,
+               GROUP_CONCAT(slt.language, ', ') as subtitle_languages,
+               evt.end_video_1_id, evt.end_video_2_id,
+               pt.playlist_name,
+               pst.status as playlist_status
+        FROM video_table vt
+        LEFT JOIN video_status vs ON vt.id = vs.video_id
+        LEFT JOIN status_table st ON vs.status_id = st.id
+        LEFT JOIN videoLanguage_table vl ON vt.id = vl.video_id
+        LEFT JOIN subtitle_language_table slt ON vl.subtitle_id = slt.id
+        LEFT JOIN end_video_table evt ON vt.id = evt.video_id
+        LEFT JOIN video_playlist_table vp ON vt.id = vp.video_id
+        LEFT JOIN playlist_table pt ON vp.playlist_id = pt.id
+        LEFT JOIN playlist_status ps ON pt.id = ps.playlist_id
+        LEFT JOIN status_table pst ON ps.status_id = pst.id
+        WHERE vt.id = ?
+        GROUP BY vt.id
+    ''', (video_id,)).fetchone()
+
+    conn.close()
+    return jsonify({
+        'id': video['id'],
+        'video_title': video['video_title'],
+        'video_url': video['video_url'],
+        'video_description': video['video_description'],
+        'video_status': video['video_status'],
+        'subtitle_languages': video['subtitle_languages'].split(', ') if video['subtitle_languages'] else [],
+        'end_video_1_id': video['end_video_1_id'],
+        'end_video_2_id': video['end_video_2_id'],
+        'playlist_name': video['playlist_name'],
+        'playlist_status': video['playlist_status']
+    })
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0",port=int("3000"),debug=True)

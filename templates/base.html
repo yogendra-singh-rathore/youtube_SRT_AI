@@ -3,14 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouTube SRT Generator</title>
+    <title>YouTube Video Management</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/youtube.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    
+    
+    
 
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>YouTube SRT Generator</h1>
+            <h1>YouTube SRT Generator & Video Manager</h1>
             <p>Developed by Yogendra Singh Rathore</p>
         </header>
         <nav>
@@ -20,6 +26,7 @@
                 <li><a href="{{ url_for('srt_to_mp4') }}">SRT to MP4</a></li>
                 <li><a href="{{ url_for('srt_edit') }}">SRT Editor</a></li>
                 <li><a href="{{ url_for('srt_translate') }}">SRT Language Translator</a></li>
+                <li><a href="{{ url_for('youtube') }}">YouTube Video Manager</a></li>
                 <li><a href="{{ url_for('font') }}">Font Download</a></li>
                 <li><a href="{{ url_for('download') }}">Download Files</a></li>
                 <li><a href="https://huggingface.co/spaces/facebook/MusicGen">Gen AI Music</a></li>

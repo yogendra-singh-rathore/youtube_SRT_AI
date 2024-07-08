@@ -1,26 +1,27 @@
 {% extends "base.html" %}
 {% block content %}
-<h2>Download Files</h2>
-<table>
-    <thead>
-        <tr>
-            <th>File Name</th>
-            <th>Download Button</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for file in files %}
-        <tr>
-            <td>{{ file.name }}</td>
-            <td>
-                <a href="{{ url_for('download_output_file', filepath=file.path) }}" class="btn btn-primary">Download</a>
-            </td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
-
-{% for message in get_flashed_messages() %}
-    <p>{{ message }}</p>
-{% endfor %}
+<div class="container">
+    <h2>Download Files</h2>
+    <table class="video-table">
+        <thead>
+            <tr>
+                <th>File Name</th>
+                <th>Download Button</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for file in files %}
+            <tr>
+                <td>{{ file.name }}</td>
+                <td>
+                    <a href="{{ url_for('download_output_file', filepath=file.path) }}" class="btn">Download</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% for message in get_flashed_messages() %}
+        <p>{{ message }}</p>
+    {% endfor %}
+</div>
 {% endblock %}

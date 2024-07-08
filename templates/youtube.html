@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="video-manager-container">
+    <button class="add-video-btn" id="add-video-btn">Add Video</button>
+
+    
+    <div class="video-form-container" id="video-form-container" style="display:none;">
+        <form id="video-form" method="post" action="{{ url_for('youtube') }}">
+            <input type="hidden" id="video_id" name="video_id">
+
+            <div class="form-group">
+                <div>
+                    <label for="video_title">Video Title</label>
+                    <input type="text" id="video_title" name="video_title" placeholder="Video Title" required>
+                </div>
+                <div>
+                    <label for="video_url">Video URL</label>
+                    <input type="url" id="video_url" name="video_url" placeholder="Example: https://www.youtube.com/watch?v=T-C1CzmPA4U&t=2s&ab_channel=HackingWithCoffee" required>
+                </div>
+            </div>
+
+            <div class="form-group full-width">
+                <label for="video_description">Video Description</label>
+                <textarea id="video_description" name="video_description" placeholder="Enter a video remark" rows="4"></textarea>
+            </div>
+
+            <div class="form-group">
+                <div>
+                    <label for="video_status">Video Status</label>
+                    <select id="video_status" name="video_status" required>
+                        <option value="" selected>-- Select Video Status --</option>
+                        {% for status in statuses %}
+                        <option value="{{ status }}">{{ status }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div>
+                    <label for="subtitle_languages">Subtitle Language</label>
+                    <select id="subtitle_languages" name="subtitle_languages" multiple>
+                        <option value="" selected>-- Select Subtitle Language --</option>
+                        {% for language in subtitle_languages %}
+                        <option value="{{ language }}">{{ language }}</option>
+                        {% endfor %}
+                    </select>
+                    <input type="text" id="new_language" name="new_language" placeholder="Add New Language">
+                </div>
+                <div>
+                    <label for="playlist_name">Playlist Name</label>
+                    <select id="playlist_name" name="playlist_name">
+                        <option value="" selected>-- Select Playlist Name --</option>
+                        {% for playlist in playlists %}
+                        <option value="{{ playlist }}">{{ playlist }}</option>
+                        {% endfor %}
+                    </select>
+                    <input type="text" id="new_playlist" name="new_playlist" placeholder="Add New Playlist Name">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div>
+                    <label for="playlist_status">Playlist Status</label>
+                    <select id="playlist_status" name="playlist_status" required>
+                        <option value="" selected>-- Select Playlist Status --</option>
+                        {% for status in statuses %}
+                        <option value="{{ status }}">{{ status }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div>
+                    <label for="end_video_1">End Video 1</label>
+                    <select id="end_video_1" name="end_video_1">
+                        <option value="None">None</option>
+                        <option value="" selected>-- Select End Video 1 --</option>
+                        {% for video in videos %}
+                        <option value="{{ video['id'] }}">{{ video['video_title'] }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div>
+                    <label for="end_video_2">End Video 2</label>
+                    <select id="end_video_2" name="end_video_2">
+                        <option value="None">None</option>
+                        <option value="" selected>-- Select End Video 2 --</option>
+                        {% for video in videos %}
+                        <option value="{{ video['id'] }}">{{ video['video_title'] }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn" id="submit-btn">Save Video</button>
+            <button type="button" class="cancel-btn" id="cancel-btn">Cancel</button>
+        </form>
+    </div>
+
+    <table class="video-table">
+        <thead>
+            <tr>
+                <th>Video ID</th>
+                <th>Video Title</th>
+                <th>Video URL</th>
+                <th>Video Description</th>
+                <th>Video Status</th>
+                <th>Video Subtitle Language</th>
+                <th>End Video 1</th>
+                <th>End Video 2</th>
+                <th>Playlist Name</th>
+                <th>Playlist Status</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for video in videos %}
+            <tr>
+                <td>{{ video['id'] }}</td>
+                <td>{{ video['video_title'] }}</td>
+                <td><a href="{{ video['video_url'] }}" target="_blank" class="my-custom-link">Watch</a></td>
+                <td>{{ video['video_description'] }}</td>
+                <td>{{ video['video_status'] }}</td>
+                <td>{{ video['subtitle_languages'] }}</td>
+                <td>{{ video['end_video_1'] }}</td>
+                <td>{{ video['end_video_2'] }}</td>
+                <td>{{ video['playlist_name'] }}</td>
+                <td>{{ video['playlist_status'] }}</td>
+                <td><button class="edit-btn" data-id="{{ video['id'] }}">Edit</button></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<script>
+    document.getElementById('add-video-btn').addEventListener('click', function() {
+        document.getElementById('video-form-container').style.display = 'block';
+        document.getElementById('video-form').reset();
+        document.getElementById('video_id').value = '';
+        document.getElementById('submit-btn').textContent = 'Add Video';
+    });
+
+    document.querySelectorAll('.edit-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const videoId = this.getAttribute('data-id');
+            fetch(`/edit_video/${videoId}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('video_id').value = data.id;
+                    document.getElementById('video_title').value = data.video_title;
+                    document.getElementById('video_url').value = data.video_url;
+                    document.getElementById('video_description').value = data.video_description;
+                    document.getElementById('video_status').value = data.video_status;
+
+                    const subtitleLanguages = data.subtitle_languages;
+                    const subtitleSelect = document.getElementById('subtitle_languages');
+                    Array.from(subtitleSelect.options).forEach(option => {
+                        option.selected = subtitleLanguages.includes(option.value);
+                    });
+
+                    document.getElementById('end_video_1').value = data.end_video_1_id || 'None';
+                    document.getElementById('end_video_2').value = data.end_video_2_id || 'None';
+                    document.getElementById('playlist_name').value = data.playlist_name || 'None';
+                    document.getElementById('playlist_status').value = data.playlist_status || 'None';
+
+                    document.getElementById('video-form-container').style.display = 'block';
+                    document.getElementById('submit-btn').textContent = 'Update Video';
+                });
+        });
+    });
+
+    document.getElementById('cancel-btn').addEventListener('click', function() {
+        document.getElementById('video-form-container').style.display = 'none';
+    });
+</script>
+{% endblock %}
