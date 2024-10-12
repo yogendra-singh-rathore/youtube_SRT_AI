@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h2>SRT to MP4 Converter</h2>
+    <form action="{{ url_for('srt.srt_to_mp4') }}" method="post" enctype="multipart/form-data">
+        <label for="mp3_file">Select MP3 File:</label>
+        <select name="mp3_file">
+          <option value="" selected>-- Select MP3 File --</option>
+            {% for mp3_file in mp3_files %}
+            <option value="{{ mp3_file }}">{{ mp3_file }}</option>
+            {% endfor %}
+        </select>
+        <label for="srt_file">Select SRT File:</label>
+        <select name="srt_file">
+          <option value="" selected>-- Select SRT File --</option>
+            {% for srt_file in srt_files %}
+            <option value="{{ srt_file }}">{{ srt_file }}</option>
+            {% endfor %}
+        </select>
+        <label for="font_path">Select Font (optional):</label>
+        <select name="font_path">
+            <option value="">Default</option>
+            {% for font in fonts %}
+            <option value="output/fonts/{{ font }}">{{ font }}</option>
+            {% endfor %}
+        </select>
+        <label for="output_file_name">Output File Name:</label>
+        <input type="text" name="output_file_name" placeholder="Enter: example.mp4">
+        <button type="submit">Convert</button>
+    </form>
+    {% for message in get_flashed_messages() %}
+        <p>{{ message }}</p>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,414 @@
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #242526;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: fixed;
+    transition: transform 0.3s ease;
+    z-index: 1000; /* Ensure sidebar is above other content */
+}
+
+.sidebar-header {
+    padding: 20px;
+    background-color: #18191a;
+    text-align: center;
+    border-bottom: 1px solid #3a3b3c;
+}
+
+.sidebar-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.sidebar-menu li {
+    border-bottom: 1px solid #3a3b3c;
+    position: relative;
+}
+
+.sidebar-menu li a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    transition: background-color 0.3s;
+}
+
+.sidebar-menu li a:hover {
+    background-color: #3a3b3c;
+}
+
+.sidebar-menu li a i {
+    margin-right: 10px;
+}
+
+.submenu {
+    display: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: #333;
+}
+
+.submenu li {
+    border-bottom: none;
+}
+
+.submenu li a {
+    padding: 10px 20px;
+    background-color: #333;
+}
+
+.submenu li a:hover {
+    background-color: #444;
+}
+
+.has-submenu:hover .submenu {
+    display: block;
+}
+
+.dropdown-icon {
+    margin-left: auto;
+    transition: transform 0.3s;
+    color: white; /* Set the color of the dropdown icon to white */
+}
+
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    width: calc(100% - 250px);
+    flex: 1;
+    overflow-y: auto;
+}
+
+header {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #242526;
+}
+
+header p {
+    margin: 10px 0 0;
+    color: #606770;
+}
+
+.mobile-nav {
+    display: none; /* Hidden by default */
+    width: 100%;
+    background-color: #18191a; /* Black background */
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1500;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.mobile-nav h2 {
+    margin: 0;
+    font-size: 1.5em;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.mobile-menu-toggle {
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.mobile-menu-toggle i {
+    vertical-align: middle;
+}
+
+main {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: #18191a;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid #3a3b3c;
+    width: calc(100% - 250px);
+    margin-left: 250px;
+}
+
+footer a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #2980b9;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="file"],
+input[type="url"],
+textarea,
+select {
+    padding: 10px;
+    margin: 5px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+textarea {
+    height: 200px;
+}
+
+/* Button Styles */
+button, .btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    align-self: flex-start;
+}
+
+button:hover, .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Progress Bar Styles */
+.progress-bar {
+    width: 100%;
+    background-color: #f3f3f3;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+.progress-bar progress {
+    width: 100%;
+}
+
+/* Video Container Styles */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Split Container Styles */
+.split-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.video-column, .editor-column {
+    flex: 1 1 45%; /* Flex-basis set to 45% for responsiveness */
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.save-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.editor-column textarea {
+    width: 100%;
+    height: 400px; /* Adjust height as needed */
+}
+
+/* FAQ Styles */
+.faq {
+    margin-top: 20px;
+}
+
+.accordion {
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    transition: 0.4s;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.accordion:hover {
+    background-color: #0056b3;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    margin-bottom: 10px;
+}
+
+/* Checkbox Styles */
+input[type="checkbox"] {
+    margin: 5px 10px 5px 0;
+    vertical-align: middle;
+}
+
+label[for="target_languages"],
+input[type="checkbox"] + label {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    font-weight: normal;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .mobile-nav {
+        display: flex; /* Display the mobile nav on smaller screens */
+    }
+
+    .menu-toggle {
+        display: none; /* Hide the old menu toggle button */
+    }
+
+    .main-content {
+        margin-top: 60px; /* Push down main content so it doesn't overlap with mobile nav */
+    }
+
+    /* Sidebar adjustments for mobile */
+    .sidebar {
+        transform: translateX(-100%); /* Initially hidden off-screen */
+        width: 250px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        z-index: 1000;
+        transition: transform 0.3s ease;
+    }
+
+    .sidebar.active {
+        transform: translateX(0); /* Slide in the sidebar when active */
+    }
+
+    footer {
+        width: 100%;
+        margin-left: 0; /* Ensure footer spans full width on mobile */
+    }
+
+    .main-content {
+        margin-left: 0; /* Ensure main content spans full width on mobile */
+        width: 100%;
+    }
+}
+
+/* Sidebar and content adjustments for larger screens */
+@media (min-width: 769px) {
+    .sidebar {
+        transform: translateX(0); /* Sidebar is always visible on desktop */
+        width: 250px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        z-index: 1000;
+    }
+
+    .main-content {
+        margin-left: 250px;
+        width: calc(100% - 250px); /* Adjust main content width based on sidebar */
+    }
+
+    .mobile-nav {
+        display: none; /* Hide mobile nav on larger screens */
+    }
+
+    .menu-toggle {
+        display: block; /* Show the old menu toggle if still needed on larger screens */
+    }
+}

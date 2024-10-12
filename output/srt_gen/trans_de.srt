@@ -1,0 +1,328 @@
+1
+00:00:00,200 --> 00:00:03,822
+Also, hey Leute, ich habe dieses tolle Tool namens SRT Generator entwickelt und
+
+2
+00:00:03,846 --> 00:00:07,510
+Video-Manager. Grundsätzlich generiert dieses Tool Untertitel für
+
+3
+00:00:07,550 --> 00:00:10,646
+Ihr Video mithilfe von KI. Und die KI
+
+4
+00:00:10,678 --> 00:00:14,150
+Wir verwenden AssemblyAI. Okay, das ist ein
+
+5
+00:00:14,190 --> 00:00:18,126
+erstaunliche KI, die Ihre YouTube-Untertitel erstellt
+
+6
+00:00:18,238 --> 00:00:21,846
+Videos Entschuldigung Untertitel für Ihre Videos
+
+7
+00:00:21,958 --> 00:00:26,094
+in jeder Sprache standardmäßig. Im Moment bin ich in Indien, also im Grunde bin ich
+
+8
+00:00:26,142 --> 00:00:29,962
+mit zwei Sprachen, nämlich globalem Englisch und Hindi. Sogar Sie
+
+9
+00:00:29,986 --> 00:00:34,282
+können Sie Ihre weitere Sprache nach Ihrer Wahl hinzufügen. Dann müssen Sie setzen
+
+10
+00:00:34,466 --> 00:00:38,186
+API für die Verwendung dieses Tools. Okay, sobald Sie
+
+11
+00:00:38,218 --> 00:00:42,146
+Klicken Sie auf „Generieren“, um die API zu aktivieren. Sie erhalten dann bestimmte
+
+12
+00:00:42,338 --> 00:00:46,498
+srt-Dateien. Im Grunde werden diese SRT-Dateien Untertitel genannt.
+
+13
+00:00:46,634 --> 00:00:50,306
+Hier können Sie im Download sehen Ich habe viele Dateien, so können Sie sehen
+
+14
+00:00:50,418 --> 00:00:53,938
+srt okay auf Englisch, okay auf Hindi gibt es eine Menge
+
+15
+00:00:53,994 --> 00:00:57,488
+Sid-Dateien, so dass Sie diese herunterladen können, sobald Sie die
+
+16
+00:00:57,504 --> 00:01:00,784
+Srt-Datei, okay, jetzt müssen Sie testen, denn auch
+
+17
+00:01:00,832 --> 00:01:04,512
+KI kann Fehler machen, etwa Grammatik- und Rechtschreibfehler.
+
+18
+00:01:04,616 --> 00:01:08,280
+Sobald Sie die Datei generiert haben, klicken Sie hier.
+
+19
+00:01:08,320 --> 00:01:12,120
+SRT in mp4 und dies wird Ihre SRT-Datei konvertieren
+
+20
+00:01:12,160 --> 00:01:16,656
+und MP4-Datei in Entschuldigung, MP3-Datei in MP4-Datei.
+
+21
+00:01:16,768 --> 00:01:20,280
+Hier können Sie MP3 auswählen und dann müssen Sie SRt auswählen
+
+22
+00:01:20,320 --> 00:01:24,256
+Datei und Standard. Wie eine Menge Zeit, die ich benutze, spreche ich
+
+23
+00:01:24,288 --> 00:01:28,184
+in Hindi, also muss ich Hindi-Schriftarten verwenden.
+
+24
+00:01:28,232 --> 00:01:31,476
+Okay, Sie können also auswählen, oder wenn Sie Englisch verwenden, dann müssen Sie nicht
+
+25
+00:01:31,508 --> 00:01:35,164
+müssen uns Sorgen machen. Und hier müssen Sie die Titel setzen, okay, wie
+
+26
+00:01:35,292 --> 00:01:38,756
+Test oder Ausgabe oder endgültige Ausgabe. Sie können gerne setzen
+
+27
+00:01:38,828 --> 00:01:41,988
+dot mp4, sobald Sie es getan haben. Okay, jetzt klicken Sie auf
+
+28
+00:01:42,044 --> 00:01:45,764
+SRT-Editor. Okay, jetzt englische Untertitel wie
+
+29
+00:01:45,812 --> 00:01:49,636
+Ich verwende englische Untertitel und englische Untertitel SRT und
+
+30
+00:01:49,668 --> 00:01:53,380
+lade es hoch. Hier kannst du das Video sehen und
+
+31
+00:01:53,420 --> 00:01:57,292
+Sie können deutlich sehen, dass dieses Video Ihnen zeigt,
+
+32
+00:01:57,316 --> 00:02:00,784
+Untertitel in großer Schrift. Okay, hier können Sie die
+
+33
+00:02:00,812 --> 00:02:04,056
+die Schriftart. Hier können Sie die Schriftart nach Ihren Wünschen bearbeiten. Sobald Sie hinzufügen
+
+34
+00:02:04,088 --> 00:02:07,240
+es können Sie speichern. Und wenn Sie, wenn dieser Bereich nicht
+
+35
+00:02:07,280 --> 00:02:11,040
+Suchen Sie nach etwas Gutem für Sie. Als ob Sie mehr Platz zum Bearbeiten des SRT benötigen.
+
+36
+00:02:11,080 --> 00:02:14,824
+So wie hier können Sie ganz einfach per Drag & Drop
+
+37
+00:02:14,872 --> 00:02:18,752
+zur Auswahl. Dies ist ein wirklich einfaches Tool, das leicht zu verwalten ist.
+
+38
+00:02:18,936 --> 00:02:22,864
+Sobald Sie alles verwalten, okay, und Sie können übersetzen sogar
+
+39
+00:02:22,912 --> 00:02:26,522
+Ihre Untertitel in verschiedenen Sprachen auch
+
+40
+00:02:26,656 --> 00:02:30,542
+Wählen Sie einfach Ihre Untertitel aus. Standardmäßig habe ich die englischen Untertitel verwendet.
+
+41
+00:02:30,606 --> 00:02:34,270
+Okay, Sie können also wie auf Englisch übersetzen. Dann können Sie übersetzen in
+
+42
+00:02:34,310 --> 00:02:37,598
+Deutsch, Japanisch, Französisch, alle anderen Sprachen
+
+43
+00:02:37,694 --> 00:02:41,230
+Sie wollen, wie auch Chinesisch. Aber für Chinesisch müssen Sie
+
+44
+00:02:41,270 --> 00:02:45,478
+Laden Sie die Schriftart für Japanisch erneut herunter. Sie müssen sie auch herunterladen
+
+45
+00:02:45,534 --> 00:02:48,662
+Schriftarten. Und wenn Sie Schriftarten herunterladen möchten, klicken Sie einfach auf
+
+46
+00:02:48,686 --> 00:02:52,198
+Schriftart herunterladen, Schriftarten wie dot TTF-Dateien hochladen
+
+47
+00:02:52,254 --> 00:02:55,678
+und sobald Sie es hochladen, lädt es definitiv Ihre Schriftarten herunter und Sie können
+
+48
+00:02:55,734 --> 00:02:58,966
+direkt diese Schriftart direkt in diesem Tool.
+
+49
+00:02:59,078 --> 00:03:02,590
+Wenn alles erledigt ist, ist dies ein erstaunliches Werkzeug.
+
+50
+00:03:02,670 --> 00:03:06,158
+Jetzt gibt es eine Wendung, auch wenn Sie etwas Musik erzeugen möchten
+
+51
+00:03:06,214 --> 00:03:10,070
+für Ihre Videos. Hier ist ein Open-Source-Tool, das
+
+52
+00:03:10,190 --> 00:03:13,478
+generierte 50 Sekunden Musikdateien,
+
+53
+00:03:13,534 --> 00:03:17,678
+okay. Wie von Ihnen gefordert. So können Sie dieses Tool generieren und sogar
+
+54
+00:03:17,734 --> 00:03:20,982
+Sie können externe Audio-, Video- und Audiodateien verwenden für
+
+55
+00:03:21,006 --> 00:03:25,088
+deine Videos, okay. Und es gibt eine wichtige und erstaunliche
+
+56
+00:03:25,144 --> 00:03:28,824
+Konzept namens YouTube Video Manager. Hier können Sie verwalten
+
+57
+00:03:28,872 --> 00:03:32,440
+Ihr Video wie Anzeigenuntertitel, URL-Beschreibung,
+
+58
+00:03:32,480 --> 00:03:35,656
+welche Art von Beschreibung oder auch wie Sie viele Videos verwalten müssen.
+
+59
+00:03:35,688 --> 00:03:39,120
+Wenn Sie beispielsweise Tausende von Videos haben, dann werden Sie
+
+60
+00:03:39,200 --> 00:03:42,672
+du hast deine alten Videos geholt, ein paar Videos geändert,
+
+61
+00:03:42,736 --> 00:03:46,232
+Endpunkt oder Werbeuntertitel, das hängt ganz von Ihnen ab.
+
+62
+00:03:46,256 --> 00:03:50,144
+Von hier aus können Sie alles vollständig verwalten und Ihre Videos hinzufügen.
+
+63
+00:03:50,192 --> 00:03:53,232
+Sie können es sogar jedem Video hinzufügen und das ist
+
+64
+00:03:53,256 --> 00:03:57,024
+tatsächlich in Ihrer Datenbank verfügbar. So können Sie
+
+65
+00:03:57,072 --> 00:04:00,280
+verwalten und Sie können sehen, wie Video-ID. Als ob ich gerade eine erstellt habe
+
+66
+00:04:00,320 --> 00:04:03,712
+Video, so dass ich das Video eine ID Videotitel verwenden kann
+
+67
+00:04:03,776 --> 00:04:07,300
+Status der URL-Beschreibung, als wäre sie in der Planungsphase. Sie können sehen
+
+68
+00:04:07,920 --> 00:04:11,160
+eigentlich gibt es verschiedene Arten von Titeln wie Planung, Scripting,
+
+69
+00:04:11,240 --> 00:04:15,120
+Aufnahme, Bearbeitung, sogar Sie können alles verwalten. Als wäre es ein privates
+
+70
+00:04:15,200 --> 00:04:18,768
+Video, öffentliches Video und nicht aufgeführte Videosprachen
+
+71
+00:04:18,824 --> 00:04:22,508
+Sie möchten auswählen, wie Sie verfolgen möchten. Wie welche Videos haben welche Art
+
+72
+00:04:22,524 --> 00:04:26,748
+von Untertiteln. Auf jeden Fall, es gibt viele wie Untertitel
+
+73
+00:04:26,804 --> 00:04:31,004
+da draußen und Sprachen da draußen. Sogar Sie können hier neue Sprachen bearbeiten und
+
+74
+00:04:31,092 --> 00:04:35,044
+dasselbe wie: unter welche Videos fällt das? Was für eine Playlist?
+
+75
+00:04:35,172 --> 00:04:38,524
+Okay. Und Sie können sogar neue Playlists und Videos erstellen wie
+
+76
+00:04:38,652 --> 00:04:42,092
+das tust du. Bitte auf jeden Fall darum, neue Videos wie Endvideos zu bearbeiten.
+
+77
+00:04:42,156 --> 00:04:45,636
+Es gibt also zwei Endvideos. Sie können also zwei und Videos hinzufügen, wenn Sie
+
+78
+00:04:45,668 --> 00:04:49,124
+wollen oder nichts. Kommt total drauf an. Und sogar Playlists sind total
+
+79
+00:04:49,172 --> 00:04:52,172
+abhängig von dieser Site, was Sie planen oder was.
+
+80
+00:04:52,276 --> 00:04:56,332
+Es handelt sich also um ein fantastisches Tool, das absolut kostenlos ist.
+
+81
+00:04:56,436 --> 00:04:59,900
+Sie können es kostenlos nutzen. Sie können es von meinem GitHub-Repository herunterladen und
+
+82
+00:04:59,940 --> 00:05:01,452
+viel Spaß. Danke,
+
