@@ -1,0 +1,39 @@
+application/
+├── config/
+│   ├── database.py
+│   └── db_conn.py
+├── exceptionHandler/
+├── models/
+├── routes/
+│   ├── core.py
+│   ├── srt.py
+│   ├── upload.py
+│   └── youtube.py
+├── static/
+│   ├── css/
+│   │   ├── style.css
+│   │   └── youtube.css
+│   ├── js/
+│   │   └── scripts.js
+│   └── videos/
+│       └── testfile.mp4
+├── templates/
+│   ├── base.html
+│   ├── download.html
+│   ├── font.html
+│   ├── index.html
+│   ├── srt_edit.html
+│   ├── srt_gen.html
+│   ├── srt_to_mp4.html
+│   ├── srt_translate.html
+│   ├── video.player.html
+│   └── youtube.html
+├── upload/
+├── utils/
+│   ├── font_handler.py
+│   ├── path_handler.py
+│   └── srt_handler.py
+└── __init__.py
+dockerfile
+main.py
+requirements.txt

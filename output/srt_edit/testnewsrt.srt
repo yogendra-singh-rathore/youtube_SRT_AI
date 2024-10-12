@@ -1,0 +1,328 @@
+1
+00:00:00,200 --> 00:00:03,822
+So hey guys, I create this amazing tool called SRT generator and
+
+2
+00:00:03,846 --> 00:00:07,510
+video manager. Basically this tool generates subtitles for
+
+3
+00:00:07,550 --> 00:00:10,646
+your video by using AI. And the AI sdfsdgsgs sg sdsg shgs s
+
+4
+00:00:10,678 --> 00:00:14,150
+we are using is AssemblyAI. Okay this is an
+
+5
+00:00:14,190 --> 00:00:18,126
+amazing AI which will be create your YouTube subtitles
+
+6
+00:00:18,238 --> 00:00:21,846
+videos sorry subtitles for your videos
+
+7
+00:00:21,958 --> 00:00:26,094
+in any language by default. Right now I'm in India so basically I'm
+
+8
+00:00:26,142 --> 00:00:29,962
+using two language which is global English and Hindi. Even you
+
+9
+00:00:29,986 --> 00:00:34,282
+can add your more language as per your choice. Then you have to put
+
+10
+00:00:34,466 --> 00:00:38,186
+API for use this tool. Okay once you put
+
+11
+00:00:38,218 --> 00:00:42,146
+the API you can click on generate and it will give you certain
+
+12
+00:00:42,338 --> 00:00:46,498
+srt files. So basically these SRT files are called subtitles.
+
+13
+00:00:46,634 --> 00:00:50,306
+Here you can see in download I have lot of files so you can see
+
+14
+00:00:50,418 --> 00:00:53,938
+srt okay in english, okay in hindi there are a lot of
+
+15
+00:00:53,994 --> 00:00:57,488
+Sid files so you can download this once you generate the
+
+16
+00:00:57,504 --> 00:01:00,784
+Srt file, okay now you have to like test because even
+
+17
+00:01:00,832 --> 00:01:04,512
+AI can do some kind of mistake like grammatical mistakes and spelling mistakes.
+
+18
+00:01:04,616 --> 00:01:08,280
+So once you generate the file, okay click on here like
+
+19
+00:01:08,320 --> 00:01:12,120
+SRT to mp4 and this will be convert your srt file
+
+20
+00:01:12,160 --> 00:01:16,656
+and mp4 file in sorry MP3 file into mp4 file.
+
+21
+00:01:16,768 --> 00:01:20,280
+So here you can select MP3 and then you have to select SRt
+
+22
+00:01:20,320 --> 00:01:24,256
+file and default. Like a lot of time I use, I speak
+
+23
+00:01:24,288 --> 00:01:28,184
+in Hindi language so I have to use hindi fonts.
+
+24
+00:01:28,232 --> 00:01:31,476
+Okay so you can select or if you are using the English then you don't
+
+25
+00:01:31,508 --> 00:01:35,164
+have to worry. And here you have to put the titles, okay like
+
+26
+00:01:35,292 --> 00:01:38,756
+test or output or final output. You can like put
+
+27
+00:01:38,828 --> 00:01:41,988
+dot mp4 once you done it. Okay now click on
+
+28
+00:01:42,044 --> 00:01:45,764
+srt editor. Okay now then english subtitles like
+
+29
+00:01:45,812 --> 00:01:49,636
+I'm using english subtitles and english subtitle srt and
+
+30
+00:01:49,668 --> 00:01:53,380
+upload it. Here you can see the video and
+
+31
+00:01:53,420 --> 00:01:57,292
+you can see clearly this video is totally showing you the
+
+32
+00:01:57,316 --> 00:02:00,784
+subtitles on a big font. Okay here you can read the
+
+33
+00:02:00,812 --> 00:02:04,056
+the font. Here you can edit the font as per your choice. Once you add
+
+34
+00:02:04,088 --> 00:02:07,240
+it you can save it. And if you, if this area is not
+
+35
+00:02:07,280 --> 00:02:11,040
+look for good for you. Like you need a more area to edit the SRT.
+
+36
+00:02:11,080 --> 00:02:14,824
+Like here simply you can drag and drop easily
+
+37
+00:02:14,872 --> 00:02:18,752
+for your choice. This is really easy tool, like easy to manage.
+
+38
+00:02:18,936 --> 00:02:22,864
+Once you manage everything, okay and you can translate even
+
+39
+00:02:22,912 --> 00:02:26,522
+your subtitles into various different languages also
+
+40
+00:02:26,656 --> 00:02:30,542
+like just pick your subtitles by default I used the english subtitles.
+
+41
+00:02:30,606 --> 00:02:34,270
+Okay so you can translate like in English. Then you can translate in
+
+42
+00:02:34,310 --> 00:02:37,598
+German, Japanese, French, whatever languages
+
+43
+00:02:37,694 --> 00:02:41,230
+you want, like even Chinese also. But for Chinese you have to
+
+44
+00:02:41,270 --> 00:02:45,478
+download again font for Japanese you have download also
+
+45
+00:02:45,534 --> 00:02:48,662
+fonts. And if you want to download fonts, just click on
+
+46
+00:02:48,686 --> 00:02:52,198
+download font, upload fonts like dot TTF files
+
+47
+00:02:52,254 --> 00:02:55,678
+and once you upload it, it definitely download your fonts and you can use
+
+48
+00:02:55,734 --> 00:02:58,966
+directly this font directly in this tool.
+
+49
+00:02:59,078 --> 00:03:02,590
+This is an amazing tool once everything is done.
+
+50
+00:03:02,670 --> 00:03:06,158
+Now there is a twist even if you want to generate some music
+
+51
+00:03:06,214 --> 00:03:10,070
+for your videos. So here is an open source tool which is
+
+52
+00:03:10,190 --> 00:03:13,478
+generated 50 seconds music files,
+
+53
+00:03:13,534 --> 00:03:17,678
+okay. As per your prompt. So you can generate this tool and even
+
+54
+00:03:17,734 --> 00:03:20,982
+you can use outside audio, video audio files for
+
+55
+00:03:21,006 --> 00:03:25,088
+your videos, okay. And there's a one important and amazing
+
+56
+00:03:25,144 --> 00:03:28,824
+concept called YouTube video manager. Here you can manage
+
+57
+00:03:28,872 --> 00:03:32,440
+your video like ad subtitles, URL's description,
+
+58
+00:03:32,480 --> 00:03:35,656
+what kind of description or even like you have to manage lot of videos.
+
+59
+00:03:35,688 --> 00:03:39,120
+Like if once you have like thousands of video, definitely you,
+
+60
+00:03:39,200 --> 00:03:42,672
+you went out for your old videos, change some videos,
+
+61
+00:03:42,736 --> 00:03:46,232
+endpoint or ad subtitles, it's totally depend on you.
+
+62
+00:03:46,256 --> 00:03:50,144
+You can totally manage everything from here and add your videos.
+
+63
+00:03:50,192 --> 00:03:53,232
+Even you can add it every videos and this is
+
+64
+00:03:53,256 --> 00:03:57,024
+totally actually available in your database. So you can
+
+65
+00:03:57,072 --> 00:04:00,280
+manage and you can see like video id. Like I have just created one
+
+66
+00:04:00,320 --> 00:04:03,712
+video so I can use the video one id video title
+
+67
+00:04:03,776 --> 00:04:07,300
+URL description status like it's in planning phase. You can see
+
+68
+00:04:07,920 --> 00:04:11,160
+actually there are different types of titles like planning, scripting,
+
+69
+00:04:11,240 --> 00:04:15,120
+recording, editing, even you can manage everything. Like it's a private
+
+70
+00:04:15,200 --> 00:04:18,768
+video, public video and unlisted video languages
+
+71
+00:04:18,824 --> 00:04:22,508
+you want to select, like you want to track. Like which videos have what kind
+
+72
+00:04:22,524 --> 00:04:26,748
+of subtitles. Definitely so there are a lot of like subtitles
+
+73
+00:04:26,804 --> 00:04:31,004
+out there and languages out there. Even you can edit new languages here and
+
+74
+00:04:31,092 --> 00:04:35,044
+same like which videos this come under? What kind of playlist?
+
+75
+00:04:35,172 --> 00:04:38,524
+Okay. And even you can create new playlist and videos like
+
+76
+00:04:38,652 --> 00:04:42,092
+you do. Definitely ask for edit new like end videos.
+
+77
+00:04:42,156 --> 00:04:45,636
+So there are two end videos. So you can add two and videos if you
+
+78
+00:04:45,668 --> 00:04:49,124
+want or nothing. Totally depend. And even like playlist is totally
+
+79
+00:04:49,172 --> 00:04:52,172
+depending on this site like you're planning or what.
+
+80
+00:04:52,276 --> 00:04:56,332
+So this is an amazing tool which is absolutely free of cost.
+
+81
+00:04:56,436 --> 00:04:59,900
+You can use it free of cost. You can download from my GitHub repository and
+
+82
+00:04:59,940 --> 00:05:01,452
+enjoy. Thank you,
+

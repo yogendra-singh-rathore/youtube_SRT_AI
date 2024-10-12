@@ -1,0 +1,259 @@
+/* General container styling */
+.video-manager-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Form container styling */
+.video-form-container {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Style the Add Video button */
+.add-video-btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.add-video-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Style the form fields */
+#video-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#video-form input[type="text"],
+#video-form input[type="url"],
+#video-form textarea,
+#video-form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+#video-form textarea {
+    height: 60px;
+}
+
+/* Style the form buttons */
+.submit-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-btn:hover {
+    background-color: #218838;
+}
+
+.cancel-btn {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.cancel-btn:hover {
+    background-color: #c82333;
+}
+
+/* Buttons row styling */
+.buttons-row {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+/* Style the table */
+.table-responsive {
+    overflow-x: auto;
+}
+
+.video-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.video-table th, .video-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.video-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+/* Style the edit buttons in the table */
+.edit-btn {
+    background-color: #FFC107;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.edit-btn:hover {
+    background-color: #e0a800;
+}
+
+/* Additional styling for better visual appearance */
+#video-form input[type="text"],
+#video-form input[type="url"],
+#video-form textarea,
+#video-form select,
+.submit-btn {
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#video-form input[type="text"]:focus,
+#video-form input[type="url"]:focus,
+#video-form textarea:focus,
+#video-form select:focus,
+.submit-btn:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* New styles for the form layout */
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.form-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.full-width {
+    flex-basis: 100%;
+}
+
+/* Style for pagination */
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 5px;
+}
+
+.pagination button:hover {
+    background-color: #0056b3;
+}
+
+.pagination button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
+
+/* Style for search and filter */
+.table-controls {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-container {
+    position: relative;
+    width: 50%;
+}
+
+#search-input {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    padding-left: 40px;
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #666;
+}
+
+.filter-container {
+    position: relative;
+    width: 25%;
+}
+
+#status-filter {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    padding-left: 40px;
+}
+
+.filter-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #666;
+}
+
+/* Style the custom link */
+.my-custom-link {
+    background-color: #007BFF;
+    color: white;
+    padding: 8px 18px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 50px;
+}
+
+.my-custom-link:hover, .my-custom-link:active {
+    background-color: #0056b3;
+}

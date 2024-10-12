@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h2>SRT Language Translator</h2>
+    <form action="{{ url_for('srt.srt_translate') }}" method="post">
+        <label for="file">Select SRT File:</label>
+        <select name="file" id="file">
+            <option value="" selected>-- Select SRT Language File --</option>
+            {% for srt_file in srt_files %}
+            <option value="{{ srt_file }}">{{ srt_file }}</option>
+            {% endfor %}
+        </select>
+        <label for="intermediate_language">Translate to Intermediate Language:</label>
+        <select name="intermediate_language" id="intermediate_language">
+            <option value="en">English</option>
+            <!-- Add other languages as needed -->
+        </select>
+        <label for="target_languages"><strong>Translate to Target Languages:</strong></label>
+        <div>
+            <input type="checkbox" name="target_languages" value="de" id="de">
+            <label for="de">German</label>
+        </div>
+        <div>
+            <input type="checkbox" name="target_languages" value="ja" id="ja">
+            <label for="ja">Japanese</label>
+        </div>
+        <!-- Add more target languages as needed -->
+        <button type="submit">Translate</button>
+    </form>
+    {% for message in get_flashed_messages() %}
+        <p>{{ message }}</p>
+    {% endfor %}
+</div>
+{% endblock %}

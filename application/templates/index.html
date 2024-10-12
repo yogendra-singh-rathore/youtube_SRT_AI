@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h2>Welcome to YouTube SRT Generator</h2>
+    <p>Use the tabs to navigate between features.</p>
+    <br><br>
+
+    <!-- Video Section -->
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <br><br>
+
+    <!-- FAQ Section -->
+    <h4>How to Use this Tool</h4>
+    <div class="faq">
+        <button class="accordion">How do I generate subtitles from MP3 files?</button>
+        <div class="panel">
+            <p>To generate subtitles, click on "Srt Gen" and upload your MP3 file & Assambly AI API Key. The tool will process the file and generate the subtitles.</p>
+        </div>
+
+        <button class="accordion">How can I merge subtitles with video?</button>
+        <div class="panel">
+            <p>Click on "SRT To MP4" and Select your "SRT file" along with the "MP3 file" and "output File Name With .mp4". The tool will combine them to create an MP4 video.</p>
+        </div>
+
+        <button class="accordion">How do I edit my subtitles?</button>
+        <div class="panel">
+            <p>To edit subtitles, click on "SRT Editor" and Select your "SRT file" and "Video File". You can make changes and save the updated file.</p>
+        </div>
+
+        <button class="accordion">Can I translate subtitles into other languages?</button>
+        <div class="panel">
+            <p>Yes, click on "SRT Language Translator" and Select your SRT file. Select the target language and the tool will provide the translated subtitles.</p>
+        </div>
+
+        <button class="accordion">What if I need specific fonts for certain languages?</button>
+        <div class="panel">
+            <p>Some languages require specific fonts. Click on "Font Download" upload the font in ".tts format". it will Automatic download the font</p>
+        </div>
+
+        <button class="accordion">Where can I access my generated and edited files?</button>
+        <div class="panel">
+            <p>All your files can be accessed and downloaded from the "Download Files" section. Click on the link to view and download your files.</p>
+        </div>
+        <button class="accordion">Where can I Manage My All YouTube Videos?</button>
+        <div class="panel">
+            <p>Click on "YouTube Manager" and Then You Can Add or Edit And Manage All of Your Video in One Place</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+<script src="{{ url_for('static', filename='js/scripts.js') }}"></script>

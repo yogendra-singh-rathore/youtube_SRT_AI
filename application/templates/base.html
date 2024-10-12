@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video Management</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/youtube.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pn7r7Y4tB3ixB9N/+R8JQcVANtIk0pCwjHdXY/g2v3W5rE2bz+gufKQRv10ay6iEuvJxZ5z0JYP3apSHwZrOgA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</head>
+<body>
+    <nav class="mobile-nav" id="mobile-nav">
+        <span class="mobile-menu-toggle" id="mobile-menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+        </span>
+        <h2>Video Manager</h2>
+    </nav>
+    
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2><i class="fas fa-video"></i> Video Manager</h2>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="{{ url_for('core.index') }}"><i class="fas fa-home"></i> Home</a></li>
+            <li class="has-submenu">
+                <a href="#"><i class="fas fa-file-alt"></i> Subtitle <i class="fas fa-caret-down dropdown-icon"></i> ></a>
+                <ul class="submenu">
+                    <li><a href="{{ url_for('srt.srt_gen') }}">SRT GEN</a></li>
+                    <li><a href="{{ url_for('srt.srt_to_mp4') }}">SRT to MP4</a></li>
+                    <li><a href="{{ url_for('srt.srt_edit') }}">SRT Editor</a></li>
+                    <li><a href="{{ url_for('srt.srt_translate') }}">SRT Translator</a></li>
+                    <li><a href="{{ url_for('core.font') }}">Font Download</a></li>
+                </ul>
+            </li>
+            <li class="has-submenu">
+                <a href="#"><i class="fas fa-video"></i> YouTube <i class="fas fa-caret-down dropdown-icon"></i> ></a>
+                <ul class="submenu">
+                    <li><a href="{{ url_for('youtube.youtube') }}">Video Manager</a></li>
+                    <li><a href="https://huggingface.co/spaces/facebook/MusicGen">Gen AI Music</a></li>
+                </ul>
+            </li>
+            <li><a href="{{ url_for('core.download') }}"><i class="fas fa-download"></i> Download Files</a></li>
+        </ul>
+    </div>
+    
+    <div class="main-content">
+        <header>
+            <span class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></span>
+            <h1>YouTube SRT Generator & Video Manager</h1>
+            <p>Developed by Yogendra Singh Rathore</p>
+        </header>
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2024 Yogendra Singh Rathore. All rights reserved.</p>
+        <p>Find me on <a href="https://github.com/yogendra-singh-rathore/">GitHub</a> | 
+        Subscribe on <a href="https://www.youtube.com/channel/UCBQ-ZsCQld3xiOwsN04hSfg">YouTube</a> | 
+        Visit <a href="https://yogendrasinghrathore.in/">My Website</a></p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebar = document.getElementById('sidebar');
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+
+            mobileMenuToggle.addEventListener('click', function() {
+                sidebar.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
